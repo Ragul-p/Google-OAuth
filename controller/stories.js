@@ -45,7 +45,7 @@ const postEditStory = async (req, res) => {
         if (story.user != req.user.id) {
             res.redirect('/stories')
         } else {
-            story = await Story.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true });
+            story = await Story.findOneAndUpdate({ _id: req.params.id  }, req.body, { new: true, runValidators: true });
             res.redirect('/dashboard')
         }
     } catch (err) {
